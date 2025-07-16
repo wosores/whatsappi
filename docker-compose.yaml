@@ -1,0 +1,19 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  whatsapp-sender:
+    build: .
+    container_name: whatsapp-sender
+    restart: always # Garante que o contêiner reinicie automaticamente
+    ports:
+      - "3000:3000" # Mapeia a porta 3000 do contêiner para a porta 3000 do host
+    volumes:
+      - ./baileys_auth_info:/app/baileys_auth_info # Persiste as credenciais do WhatsApp
+    environment:
+      # Adicione outras variáveis de ambiente aqui se tiver
+      NODE_ENV: production
+    # *** Adicione esta seção de DNS (ou garanta que esteja configurada assim) ***
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
