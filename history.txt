@@ -1,0 +1,145 @@
+    1  cd /home/
+    2  cd osores/
+    3  ls
+    4  pwd
+    5  sudo for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    6  for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    7  exit
+    8  sudo apt update
+    9  su
+   10  cd /home/osores/
+   11  for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   12  exit
+   13  docker run hello-world
+   14  sudo systemctl enable docker.service
+   15  sudo systemctl enable containerd.service
+   18  exit
+   
+   19  cd /home/osores/
+   20  for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   21  vim repodocker.sh
+   22  chmod -R 777 repodocker.sh
+   23  sudo sh repodocker.sh
+
+   25  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   26  sudo groupadd docker
+   27  sudo usermod -aG docker $USER
+   28  newgrp docker
+   29  exit
+
+   33  sudo apt install -y curl gnupg
+   34  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   35  sudo apt install -y nodejs
+   36  node -v
+   37  npm -v
+   
+   39  mkdir whatsapp-api
+   42  chmod -R 777 whatsapp-api/
+   45  cd whatsapp-api/
+   47  npm init -y
+   49  npm install @whiskeysockets/baileys express
+       npm install qrcode
+   
+   50  ls
+   51  vim server.js
+   52  vim Dockerfile
+   53  ls -la
+   54  cd ..
+   55  ls
+   56  chmod -R 777 whatsapp-api
+   57  vim docker-compose.yaml
+   58  ls
+   59  mv docker-compose.yaml whatsapp-api/
+   60  chmod -R 777 whatsapp-api
+   61  cd whatsapp-api/
+
+
+   88  cd whatsapp-api/
+   89  ls
+   90  vim server.js
+   91  ls
+   92  docker compose build
+   93  docker compose up -d
+   94  docker logs whatsapp-sender
+  104  curl -X POST http://localhost:3000/send-message -H "Content-Type: application/json" -d '{"to": "+5511918476937", "message": "Glória a Deus, mensagem do Baileys no Ubuntu!"}'
+  105  curl -X POST http://192.168.2.23:3000/send-message -H "Content-Type: application/json" -d '{"to": "+5511918476937", "message": "Glória a Deus, mensagem do Baileys no Ubuntu!"}'
+  106  docker logs whatsapp-sender |egrep "error|fail|failed|could"
+  134  curl -X POST http://localhost:3000/send-message -H "Content-Type: application/json" -d '{"to": "+5511918476937", "message": "Glória a Deus, mensagem do Baileys no Ubuntu!"}'
+  135  docker logs whatsapp-sender |egrep "error|fail|failed|cuold"
+  143  docker exec -it whatsapp-sender sh
+
+  182  sudo apt install git
+  190  ssh-keygen -t ed25519 -C "wosores@yahoo.com.br"
+  191  eval "$(ssh-agent -s)"
+  192  ssh-add ~/.ssh/id_ed25519
+  193  cat ~/.ssh/id_ed25519.pub
+  197  git config --global user.name "wosores"
+  198  git config --global user.email "wosores@yahoo.com.br"
+  199  git remote add origin git@github.com:wosores/whatsappi.git
+  
+  
+  200  ls
+  201  mkdir whatsapp
+  202  cd whatsapp
+  203  echo "# whatsappi" >> README.md
+  205  git init
+  206  ls -la
+  207  git config --global user.name "wosores"
+  208  git config --global user.email "wosores@yahoo.com.br"
+  209  git init
+  210  ls
+  211  git add README.md
+  212  git commit -m "first commit"
+  213  git branch -M main
+  214  git remote add origin git@github.com:wosores/whatsappi.git
+  215  git push -u origin main
+  216  git clone https://github.com/wosores/whatsappi.git
+  217  ls
+  218  cd whatsappi/
+  219  ls
+  220  cd ..
+  221  ls
+  222  rm -rf whatsappi
+  223  cd ..
+  224  ls
+  225  cp -a whatsapp-api/* whatsapp
+  226  cd whatsapp
+  227  ls
+  228  git status
+  229  git add .
+  230  git commit -m "Api whatsapp"
+  231  git push
+  
+  331  npm view @whiskeysockets/baileys version
+  332  cd ..
+  333  ls
+  334  npm view @whiskeysockets/baileys version
+  335  curl -X POST http://localhost:3000/send-message -H "Content-Type: application/json" -d '{"to": "+5511918476937", "message": "Teste final apos re-autenticacao!"}'
+  336  ls
+  337  cd whatsapp-api/
+  338  ls
+  339  docker logs whatsapp-sender
+  340  cat docker-compose.yaml 
+  341  cat Dockerfile 
+  342  cat package.json 
+  343  vim package.json 
+  344  ls
+  345  rm -rf baileys_auth_info
+  346  sudo rm -rf baileys_auth_info
+  347  ls
+  348  ls -la
+  349  docker compose ls
+  350  docker compose down 
+  351  docker image ls
+  352  docker image rm -f ab
+  353* 
+  354  docker compose up -d
+  355  curl -X POST http://localhost:3000/send-message -H "Content-Type: application/json" -d '{"to": "+5511918476937", "message": "Teste final apos re-autenticacao!"}'
+  356  docker logs whatsapp-sender
+  357  curl -v https://prod.whatsapp.net
+
+  369  sudo vim /etc/docker/daemon.json
+  388  docker exec -it whatsapp-sender sh
+  393  docker logs whatsapp-sender --follow
+
+

@@ -15,6 +15,16 @@ async function connectToWhatsApp() {
     sock = makeWASocket({
         auth: state,
         // printQRInTerminal: true // Remova ou comente esta linha
+        browser: ['Ubuntu', 'Chrome', '22.04.4'], // Seus dados de browser
+        // --- Opções de Timeout adicionadas ---
+        sync: {
+            timeoutMs: 120000 // Aumenta o timeout para 60 segundos (padrão é geralmente menor, como 30s)
+        },
+        transactionOpts: {
+            timeoutMs: 120000 // Aumenta o timeout para 60 segundos
+        },
+        defaultQueryTimeoutMs: 120000 // Timeout padrão para queries gerais
+        // --- Fim das Opções de Timeout ---
     });
 
     sock.ev.on('creds.update', saveCreds);
