@@ -142,4 +142,6 @@
   388  docker exec -it whatsapp-sender sh
   393  docker logs whatsapp-sender --follow
 
+http://192.168.100.102:3000/qrcode
+
 
